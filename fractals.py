@@ -36,12 +36,12 @@ def replace(p1, p2, pattern):
     dx, dy = x2 - x1, y2 - y1
 
     dv = sqrt(dx ** 2 + dy ** 2)
-    dp = 1  # Support non length 1 patterns
-    theta = get_vector_angle(dx, dy)  # Support non horizontal patterns
+    dp = 1  # Should support non length 1 patterns?
+    theta = get_vector_angle(dx, dy)  # Should support non horizontal patterns?
 
     res = []
     for x, y in pattern:
-        # Support non origin based patterns (?)
+        # Should support non origin based patterns?
         xr, yr = x * dv / dp, y * dv / dp
         xr, yr = cos(theta) * xr - sin(theta) * yr, sin(theta) * xr + cos(theta) * yr
         xr, yr = x1 + xr, y1 + yr
